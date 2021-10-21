@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body{
+    margin: 0;
+}
+header{
+    padding: 5px;
+    background-color: #ffc7d4;
+    margin-bottom: 20px;
+    position: fixed;
+    width: 99vw;
+
+    h1{
+        font-size: 2.5em;
+        margin: 0;
+        padding: 0;
+        margin-left: 110px;
+    }
+    h2{
+        font-size: 2em;
+        margin: 0;
+        padding: 0;
+        margin-left: 110px;
+    } 
+}
+
+#portfolio{
+    padding-top: 120px;
+}
+
+#updateJobContainer, #updateCourseContainer, #updateSchoolContainer, #updateWebsiteContainer{
+    position: fixed;
+    top: 0;
+    display: none;
+    width: 90vw;
+    height: 100vh;
+    padding: 50px;
+    
+
+    fieldset{
+        background-color: aliceblue;
+    }
+
+}
+
+fieldset{
+    width: fit-content;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 30em;
+
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+textarea{
+    margin-bottom: 10px;
+}
+
+input[type=submit]{
+    width: 10em;
+    margin: 10px 0;
+}
+
+#logga{
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 7px;
+    left: 10px;
+}
+
+#wrapper{
+    width: 90vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+section{
+    width: 50vw;
+    margin: 10px 0 30px 0;
+    border-bottom: solid #ffc7d4 2px;
+}
+
+article{
+    margin: 50px 0 10px 0;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li{
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        color: #119e7b;
+    }
+    a:active{
+        color: #2cf6c5;
+    }
+}
+
+aside{
+    position: fixed;
+    left: 80vw;
+    top: 100px;
+    background-color: #ffc7d4;
+    padding: 0 10px 30px 20px;
+}
+
+nav{
+    width: 10em;
+    font-family: 'Bebas Neue', cursive;
+}
+
+footer{
+    background-color: #ffc7d4;  
+    margin: 0;
+}
