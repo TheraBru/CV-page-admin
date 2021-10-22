@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration - Therese Bruzell</title>
     <link type="text/css" rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/a4e1bec0fb.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -16,11 +17,11 @@
     <main>
         <div id="wrapper">
             <aside>
-                <h2>Navigera dig</h2>
+                <h2></h2>
                 <nav>
                     <ul>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#addWebsite">Lägg till ny websida</a></li>
+                        <li><a href="#addWebsite">Lägg till ny webbsida</a></li>
                         <li><a href="#cv">Utbildning</a></li>
                         <li><a href="#addSchool">Lägg till ny utbildning</a></li>
                         <li><a href="#jobExp">Arbetserfarenhet</a></li>
@@ -43,7 +44,7 @@
                             <textarea name="websiteDesc" id="websiteDesc" cols="30" rows="10"></textarea>
                             <label for="websiteURL">Länk till webbplats:</label>
                             <input type="text" name="websiteURL" id="websiteURL" required>
-                            <input type="submit" value="Lägg till">
+                            <input type="submit" value="Lägg till" class="button editBtn">
                         </form>
                     </fieldset>
                 </section>
@@ -54,7 +55,7 @@
                         <ul id="schoolContainer">
     
                         </ul>
-                        <h3 id="addSchool">Lägg till ny utbildning</h3>
+                        <h4 id="addSchool">Lägg till ny utbildning</h4>
                         <fieldset>
                             <form action="" id="schoolForm">
                                 <label for="schoolName">Lärosäte:</label>
@@ -67,7 +68,7 @@
                                 <input type="date" name="schoolStartdate" id="schoolStartdate" required>
                                 <label for="schoolEnddate">Slutdatum:</label>
                                 <input type="date" name="schoolEnddate" id="schoolEnddate">
-                                <input type="submit" value="Lägg till">
+                                <input type="submit" value="Lägg till" class="button editBtn">
                             </form>
                         </fieldset>
                     </article>
@@ -76,7 +77,7 @@
                         <ul id="jobContainer">
     
                         </ul>
-                        <h3 id="addJob">Lägg till nytt jobb</h3>
+                        <h4 id="addJob">Lägg till nytt jobb</h4>
                         <fieldset>
                             <form action="" id="jobForm">
                                 <label for="jobTitle">Jobbtitel:</label>
@@ -85,9 +86,9 @@
                                 <input type="text" name="workplace" id="workplace" required>
                                 <label for="jobStartdate">Startdatum:</label>
                                 <input type="date" name="jobStartdate" id="jobStartdate" required>
-                                <label for="jobEnddate">Slutdatum: (Lämna tom om du inte vet)</label>
+                                <label for="jobEnddate">Slutdatum: <span class="labelMsg">(Lämna tom om du inte vet)</span></label>
                                 <input type="date" name="jobEnddate" id="jobEnddate">
-                                <input type="submit" value="Lägg till">
+                                <input type="submit" value="Lägg till" class="button editBtn">
                             </form>
                         </fieldset>
                     </article>
@@ -101,9 +102,11 @@
             <p>therese.bruzell@hotmail.com</p>
             <p>076-833 53 92</p>
         </div>
-        <p>Site created by Therese Bruzell</p>
+        <p id="copyText">Site created by Therese Bruzell</p>
     </footer>
     <div id="updateWebsiteContainer">
+        <i class="fas fa-times closeBtn"></i>
+        <h2>Uppdatera webbplats</h2>
         <fieldset>
             <form action="" id="updateWebsiteForm">
                 <label for="websiteTitle">Namnet på webbplatsen:</label>
@@ -112,11 +115,13 @@
                 <textarea name="websiteDesc" id="updateWebsiteDesc" cols="30" rows="10"></textarea>
                 <label for="websiteURL">Länk till webbplats:</label>
                 <input type="text" name="websiteURL" id="updateWebsiteURL" required>
-                <input type="submit" value="Uppdatera webbsida">
+                <input type="submit" value="Uppdatera webbsida" class="button editBtn">
             </form>
         </fieldset>
     </div>
     <div id="updateSchoolContainer">
+        <i class="fas fa-times closeBtn"></i>
+        <h2>Uppdatera skola</h2>
         <fieldset>
             <form action="" id="updateSchoolForm">
                 <label for="schoolName">Lärosäte:</label>
@@ -129,11 +134,13 @@
                 <input type="date" name="schoolStartdate" id="updateSchoolStartdate" required>
                 <label for="schoolEnddate">Slutdatum:</label>
                 <input type="date" name="schoolEnddate" id="updateSchoolEnddate">
-                <input type="submit" value="Uppdatera utbildning">
+                <input type="submit" value="Uppdatera utbildning" class="button editBtn">
             </form>
         </fieldset>
     </div>
     <div id="updateCourseContainer">
+        <i class="fas fa-times closeBtn"></i>
+        <h2>Uppdatera kurs</h2>
         <fieldset>
             <form action="" id="updateCourseForm">
                 <label for="courseName">Kursnamn:</label>
@@ -142,11 +149,13 @@
                 <input type="date" name="courseStartdate" id="updateCourseStartdate" required>
                 <label for="schoolEnddate">Slutdatum:</label>
                 <input type="date" name="schoolEnddate" id="updateCourseEnddate">
-                <input type="submit" value="Uppdatera kurs">
+                <input type="submit" value="Uppdatera kurs" class="button editBtn">
             </form>
         </fieldset>
     </div>
     <div id="updateJobContainer">
+        <i class="fas fa-times closeBtn"></i>
+        <h2>Uppdatera jobb</h2>
         <fieldset>
             <form action="" id="updateJobForm">
                 <label for="jobTitle">Jobbtitel:</label>
@@ -155,9 +164,9 @@
                 <input type="text" name="workplace" id="updateWorkplace" required>
                 <label for="jobStartdate">Startdatum:</label>
                 <input type="date" name="jobStartdate" id="updateJobStartdate" required>
-                <label for="jobEnddate">Slutdatum: (Lämna tom om du inte vet)</label>
+                <label for="jobEnddate">Slutdatum: <span class="labelMsg">(Lämna tom om du inte vet)</span></label>
                 <input type="date" name="jobEnddate" id="updateJobEnddate">
-                <input type="submit" value="Uppdatera jobb">
+                <input type="submit" value="Uppdatera jobb" class="button editBtn">
             </form>
         </fieldset>
     </div>

@@ -13,8 +13,8 @@ function portfolioWriter(){
             <h3> ${website.title}</h3> 
             <p><b>Beskrivning:</b>${website.description}</p>
             <p><b>Länk: </b><a href="${website.url}">${website.url}</a></p>
-            <button id="updateWebsite${website.id}">Redigera</button>
-            <button id="deletePortfolio${website.id}">Radera</button>
+            <button id="updateWebsite${website.id}" class="button editBtn">Redigera</button>
+            <button id="deletePortfolio${website.id}" class="button eraseBtn">Radera</button>
             </article>`
         });
         deletePortfolioEventListener(data);
@@ -76,7 +76,7 @@ function updateWebsite(id){
         websiteTitleInForm.value = thisWebsite.title;
         websiteDescInForm.value = thisWebsite.description;
         websiteURLInForm.value = thisWebsite.url;
-        document.getElementById("updateWebsiteForm").addEventListener("click", () => updateWebsitePut(id))
+        document.getElementById("updateWebsiteForm").addEventListener("click", () => updateWebsitePut(id));
     })
 }
 

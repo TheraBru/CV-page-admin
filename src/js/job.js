@@ -16,12 +16,15 @@ function writeJobs(){
             if (enddate.substring(0,1)== "0"){
                 enddate = ""
             }
-            jobContainer.innerHTML = jobContainer.innerHTML + `<li> 
-            <h4> ${job.title}</h4> 
-            <p>${job.workplace}</p>
-            <p>${startdate} - ${enddate}</p>
-            <button id="updateJob${job.id}">Redigera</button>
-            <button id="deleteJob${job.id}">Radera</button>
+            jobContainer.innerHTML = jobContainer.innerHTML + `
+            <li> 
+                <div class="infoContainer">
+                    <h4> ${job.title}</h4> 
+                    <p>${job.workplace}</p>
+                    <p>${startdate} - ${enddate}</p>
+                </div>
+                <button id="updateJob${job.id}" class="button editBtn">Redigera</button>
+                <button id="deleteJob${job.id}" class="button eraseBtn">Radera</button>
             </li>`
         });
         deleteJobEventListener(data);

@@ -19,38 +19,50 @@ function writeSchool(){
             if (enddate.substring(0,1)== "0"){
                 enddate = ""
             }
-            schoolContainer.innerHTML = schoolContainer.innerHTML + `<li> <button id="schoolBtn${school.id}"> 
-            <div> 
-                <h4> ${school.schoolname}</h4> 
-                <p><b>Programname: </b>${school.programname}</p>
-                <p>${school.degree}</p>
-            </div>
-            <div>    
-                <p>${startdate} - ${enddate}</p>
-                <button id="updateSchool${school.id}">Redigera</button>
-                <button id="deleteSchool${school.id}">Radera</button>
-                <i class="fas fa-sort-down mypageArrow"></i>
-            </div>
-            </button> 
-            <div id="schoolID${school.id}">
-            </div>
-            <h5>Lägg till ny kurs till ${school.programname}</h5>
-            <fieldset>
-                <form action="" id="courseForm${school.id}">
-                    <label for="courseName">Kursnamn:</label>
-                    <input type="text" name="courseName" id="courseName${i}" required>
-                    <label for="courseStartdate">Startdatum:</label>
-                    <input type="date" name="courseStartdate" id="courseStartdate${i}" required>
-                    <label for="schoolEnddate">Slutdatum:</label>
-                    <input type="date" name="schoolEnddate" id="courseEnddate${i}">
-                    <input type="submit" value="Lägg till">
-                </form>
-            </fieldset>
+            schoolContainer.innerHTML = schoolContainer.innerHTML + 
+            `<li>
+                <div class="flexContainer"> 
+                    <div>
+                        <button class="foldingBtn" id="schoolBtn${school.id}"> 
+                            <div> 
+                                <h4> ${school.schoolname}</h4> 
+                                <p>${school.programname}</p>
+                                <p>${school.degree}</p>
+                            </div>
+                            <div>    
+                                <p>${startdate} - ${enddate}</p>
+                            </div>
+                            <i class="fas fa-sort-down mypageArrow"></i>
+                        </button> 
+                        <div class="foldingText"> 
+                            <div id="schoolID${school.id}">
+                            </div>
+                            <h5>Lägg till ny kurs till ${school.programname}</h5>
+                            <fieldset class="courseForm">
+                                <form action="" id="courseForm${school.id}">
+                                    <label for="courseName">Kursnamn:</label>
+                                    <input type="text" name="courseName" id="courseName${i}" required>
+                                    <label for="courseStartdate">Startdatum:</label>
+                                    <input type="date" name="courseStartdate" id="courseStartdate${i}" required>
+                                    <label for="schoolEnddate">Slutdatum:</label>
+                                    <input type="date" name="schoolEnddate" id="courseEnddate${i}">
+                                    <input type="submit" value="Lägg till" class="button editBtn">
+                                </form>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="btnDiv">
+                        <button id="updateSchool${school.id}" class="button editBtn">Redigera</button>
+                        <button id="deleteSchool${school.id}" class="button eraseBtn">Radera</button>
+                    </div>
+                </div>
+            </li>
             `
         };
         deleteSchoolEventListener(data);
         updateSchoolEventListener(data);
         createCourseEventListener(data);
+        buttonFolder()
     })
 }
 
@@ -95,11 +107,11 @@ function writeCourses(){
                 enddate = ""
             }
             let thisSchool = document.getElementById("schoolID"+ course.schoolid);
-            thisSchool.innerHTML = thisSchool.innerHTML + `<div id="courseID${course.id}">
+            thisSchool.innerHTML = thisSchool.innerHTML + `<div class="courseClass" id="courseID${course.id}">
                 <h5> ${course.name}</h5>   
                 <p>${startdate} - ${enddate}</p>
-                <button id="updateCourse${course.id}">Redigera</button>
-                <button id="deleteCourse${course.id}">Radera</button>
+                <button id="updateCourse${course.id}" class="button editBtn">Redigera</button>
+                <button id="deleteCourse${course.id}" class="button eraseBtn">Radera</button>
             </div>
             </li>`
         };
@@ -186,9 +198,9 @@ function updateSchool(id){
         schoolStartdateInForm.value = thisSchool.startdate;
         schoolEnddateInForm.value = thisSchool.enddate;
     })
-    .then(()=>
-    document.getElementById("updateSchoolForm").addEventListener("click", () => updateSchoolPut(id))
-    )
+    .then(()=>{
+    document.getElementById("updateSchoolForm").addEventListener("click", () => updateSchoolPut(id));
+})
 }
 
 function updateSchoolPut(id){
@@ -222,7 +234,7 @@ function updateCourse(id){
         courseNameInForm.value = thisCourse.name;
         courseStartdateInForm.value = thisCourse.startdate;
         courseEnddateInForm.value = thisCourse.enddate;
-        document.getElementById("updateCourseForm").addEventListener("click", () => updateCoursePut(id, thisCourse.schoolid))
+        document.getElementById("updateCourseForm").addEventListener("click", () => updateCoursePut(id, thisCourse.schoolid));
     })
 }
 
@@ -239,3 +251,4 @@ function updateCoursePut(id, schoolid){
         body: JSON.stringify(updatedCourse)
     })
 }
+
