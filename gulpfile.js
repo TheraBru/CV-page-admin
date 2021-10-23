@@ -8,7 +8,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const files={
     htmlPath: "src/**/*.html",
     scssPath: "src/scss/*.scss",
-    jsPath: "src/js/*.js",
+    jsConcPath: ["src/js/*.js", "!src/js/login.js"],
+    jsLoginPath: "src/js/login.js",
     imagePath: "src/images/*",
 }
 
@@ -35,20 +36,26 @@ function copySCSS(){
 };
 
 //Task to change and move Javascript-files
-function copyJS(){
-    return src(files.jsPath)
+function copyJsConc(){
+    return src(files.jsConcPath)
     .pipe(concat('main.js'))
     .pipe(dest('pub/js'))
 };
 
+function copyJsLogin(){
+    return src(files.jsLoginPath)
+    .pipe(dest('pub/js'))
+};
+
+
 
 // Watch task to make changes automatic
 function watchChanges(){
-    watch([files.htmlPath, files.imagePath, files.scssPath, files.jsPath], parallel(copyHTML, copyImg, copySCSS, copyJS));
+    watch([files.htmlPath, files.imagePath, files.scssPath, "src/js/*.js", files.jsLoginPath], parallel(copyHTML, copyImg, copySCSS, copyJsConc, copyJsLogin));
 }
 
 // Exporting the files
 exports.default = series(
-    parallel(copyHTML, copyImg, copySCSS, copyJS),
+    parallel(copyHTML, copyImg, copySCSS, copyJsConc, copyJsLogin),
     watchChanges
     );

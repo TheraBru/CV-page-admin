@@ -1,0 +1,207 @@
+#portfolio{
+    padding-top: 120px;
+}
+
+#updateJobContainer, #updateCourseContainer, #updateSchoolContainer, #updateWebsiteContainer{
+    position: fixed;
+    top: 15vh;
+    left: 25vw;
+    display: none;
+    background-color: $baseColor;
+    padding: 2vh 10vw 10vh 5vw;
+    width: 550px;
+    box-shadow: 10px 10px 4px rgb(90, 72, 81);
+
+    fieldset{
+        margin: 0 auto;
+        padding: 10px 50px;
+    }
+}
+
+.courseForm{
+    width: 20vw;
+}
+
+
+
+.labelMsg{
+    color: #a19699;
+    font-weight: 400;
+}
+#logga{
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 7px;
+    left: 10px;
+}
+
+#wrapper{
+    width: 90vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+#portfolioContainer{
+    p{
+        width: 35vw;
+    }
+}
+
+
+#copyText{
+    text-align: center;
+    width: 70vw;
+    color: #6e696b;
+    font-size: 0.9em;
+}
+
+.foldingText {
+    display: none;
+    font-size: 16px;
+    background-color: $baseColor;
+    width: 40vw;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.mypageArrow{
+    font-size: 3em;
+    color: $headingColor;
+    padding-bottom: 10px;
+}
+
+.foldingBtn{
+    width: 40vw;
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border: none;
+    background-color: $baseColor;
+    padding: 10px 20px;
+    margin-right: 10px;
+    p{
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+.infoContainer{
+    background-color: $baseColor;
+    padding: 10px 20px;
+    margin-right: 10px;
+    width: 40vw;
+    text-align: left;
+}
+
+.courseClass{
+    border-bottom: solid $headingColor 1px; 
+    padding-bottom: 20px;
+}
+
+.flexContainer{
+    display: flex;
+}
+.btnDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.button{
+    font-size: 18px;
+    font-family: $mainFont;
+    text-align: center;
+    padding: 5px 0;
+    font-weight: 600;
+    margin: 10px;
+    margin-left: 0;
+    width: 150px;
+    cursor: pointer;
+}
+
+.eraseBtn{
+    border: solid $headingColor 2px; 
+    color: $headingColor;
+    background-color: $baseColor;
+
+    &:hover{
+        border: solid $headingColor 2px; 
+        color: $baseColor;
+        background-color: $headingColor;
+
+    }
+
+    &:active{
+        border: solid $baseColor 2px; 
+        color: $baseColor;
+        background-color: $headingColor;
+    }
+
+}
+
+.editBtn{
+    border: solid $darkColor 2px; 
+    color: $darkColor;
+    background-color: $complimentColorLight;
+
+    &:hover{
+        border: solid $darkColor 2px; 
+        color: $complimentColorLight;
+        background-color: $darkColor;
+
+    }
+
+    &:active{
+        border: solid $complimentColorLight 2px; 
+        color: $complimentColorLight;
+        background-color: $darkColor;
+    }
+}
+
+#schoolContainer, #jobContainer{
+    margin-top: 0px;
+
+    li{
+        margin-bottom: 50px;
+    }
+}
+
+.closeBtn{
+    font-size: 2em;
+    color: $headingColor;
+    position: relative;
+    top: 180px;
+    left: 17em;
+    cursor: pointer;
+}
+
+#jobExp{
+    border-bottom: 0;
+}
+
+.courseForm{
+    form{
+        width: 34vw;
+
+        input[type=text]{
+            width: 21em;
+        }
+    }
+}
+
+#loginWrapper{
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 250px;
+}
+
+#errorMsg{
+    color: red;
+    display: none;
+}

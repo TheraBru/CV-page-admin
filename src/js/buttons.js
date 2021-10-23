@@ -1,5 +1,14 @@
 "use strict";
 
+if (sessionStorage.getItem('inloggad') == userName)
+        {
+            // execute code 1
+        }
+        else
+        {
+            location.replace("login.html");
+        }
+
 let closeButtons = document.getElementsByClassName("closeBtn");
 for(let i = 0; i < closeButtons.length; i++){
     closeButtons[i].addEventListener("click", () => closeWindow());

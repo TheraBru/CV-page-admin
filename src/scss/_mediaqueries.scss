@@ -1,0 +1,236 @@
+@media  screen and (max-width: 1000px) {
+
+    #wrapper{
+    width: 90vw;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 20px;
+    }
+
+    aside{
+        left: 74vw;
+    }
+
+    header{
+        h1{
+            width: fit-content;
+        }
+        h2{
+            width: fit-content;
+        } 
+    }
+
+    section{
+        width: 60vw;
+    }
+    
+    #portfolioContainer{
+        p{
+            width: 60vw;
+        }
+    }
+    
+    article{
+        width: 60vw;
+    }
+    
+    .foldingBtn{
+        width: 50vw;
+    }
+
+    .foldingText{
+        width: 50vw;
+    }
+
+    .courseForm{
+        form{
+            width: 40vw;
+
+            input[type=text]{
+                width: 20em;
+            }
+        }
+    }
+    
+
+    #updateJobContainer, #updateCourseContainer, #updateSchoolContainer, #updateWebsiteContainer{
+        top: 15vh;
+        left: 8vw;
+        width: 550px;
+        fieldset{
+            width: 200px;
+            padding: 10px 100px 10px 10px;  
+        }
+    }
+
+    .closeBtn{
+        position: absolute;
+        top: 160px;
+        left: 62vw;
+    }
+
+    .infoContainer{
+        width: 60vw;
+    }
+}
+
+@media  screen and (max-width: 800px) {
+
+    a{
+        word-wrap:break-word;
+    }
+
+    aside{
+        position: static;
+        width: 94vw;
+        box-sizing: border-box;
+        
+    }
+
+    #wrapper{
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    header{
+        position: static;
+        box-sizing: border-box;
+        width: 94vw;
+        flex-direction: column;
+
+        h1, h2{
+            margin: 0;
+            text-align: center;
+            width: fit-content;
+        }
+    }
+
+    h1, h2, h3{
+        text-align: center;
+    }
+
+    .foldingBtn{
+        flex-direction: column;
+    }
+
+    .foldingText{
+        width: 90vw;
+    }
+
+    footer{
+        flex-direction: column;
+        width: 94vw;
+        padding: 0;
+        align-items: center;
+    }
+
+    #logga{
+        width: 80px;
+        height: 80px;
+        position: static;
+        top: 7px;
+        left: 10px;
+    }
+
+    input, textarea{
+        width: 80vw;
+    }
+    
+    #portfolio{
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section{
+        margin: 0;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    article{
+        width: 90vw;
+        padding: 0 10px 0 10px;
+        box-sizing: border-box;
+    }
+
+    #portfolioContainer p {
+        width: 90vw;
+    }
+
+    #portfolioContainer{
+        article{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    fieldset{
+        width: 85vw;
+        padding: 5px;
+    }
+
+    .flexContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foldingBtn {
+        width: 90vw;
+        align-items: flex-start;
+    }
+
+    .courseForm form {
+        width: 73vw;
+
+        
+        input[type=text]{
+            width: 60vw;
+        }
+    }
+
+    .infoContainer {
+        width: 80vw;
+    }
+
+    #updateJobContainer, #updateCourseContainer, #updateSchoolContainer, #updateWebsiteContainer {
+        top: 0;
+        left: 0;
+        width: 82vw;
+
+        h2{
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        fieldset{
+            margin: 0;
+            padding: 50px 5px 5px 5px;
+            width: 80vw;
+            
+            input{
+                width: 75vw;
+            }
+
+            textarea{
+                width: 75vw;
+            }
+        }
+    }
+
+    .closeBtn{
+        top: 100px;
+        left: 80vw;
+    }
+
+    .btnDiv{
+        flex-direction: row;
+    }
+
+}

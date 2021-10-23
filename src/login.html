@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Therese Bruzell</title>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/a4e1bec0fb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="images/About.svg" alt="logga" id="logga">
+        <h1>Therese Bruzell</h1>
+        <h2>Administration</h2>
+    </header>
+    <main>
+        <div id="loginWrapper">
+           <h2 id="loggingInHead">Logga in</h2>
+           <fieldset>
+               <form action="" id="loginForm">
+                <label for="userName">Användarnamn:</label>
+                <input type="text" name="userName" id="userName" required>
+                <label for="password">Lösenord:</label>
+                <input type="password" name="password" id="password" required>
+                <button class="button editBtn" id="loginBtn">Logga in</button>
+                <p id="errorMsg">Fel användarnamn eller lösenord...</p>
+               </form>
+           </fieldset>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <h2>Kontaktuppgifter</h2>
+            <p>therese.bruzell@hotmail.com</p>
+            <p>076-833 53 92</p>
+        </div>
+        <p id="copyText">Site created by Therese Bruzell</p>
+    </footer>
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

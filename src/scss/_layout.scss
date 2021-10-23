@@ -1,0 +1,118 @@
+header{
+    padding: 5px;
+    background-color: $baseColor;
+    margin-bottom: 20px;
+    position: fixed;
+    width: 99vw; 
+}
+
+section{
+    width: 50vw;
+    margin: 10px 0 80px 0;
+    padding-bottom: 20px;
+    border-bottom: solid $headingColor 2px;
+}
+
+article{
+    margin: 0px 0 30px 0;
+    padding-bottom: 20px;
+    border-bottom: solid $headingColor 1px;
+}
+
+ul{
+    list-style: none;
+    margin-bottom: 50px;
+
+    li{
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        color: $headingColor;
+    }
+    a:active{
+        color: $complimentColor;
+    }
+}
+
+aside{
+    position: fixed;
+    left: 80vw;
+    top: 100px;
+    background-color: $baseColor;
+    padding: 0 10px 30px 20px;
+
+    h2{
+        font-size: 1.5em;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+}
+
+nav{
+    width: 10em;
+    font-family: $navFont;
+
+    ul{
+        li{
+            margin-top: 1em;
+        }
+    }
+}
+
+fieldset{
+    width: fit-content;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: $complimentColorLight;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    max-width: 500px;
+    font-family: $mainFont;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input{
+    margin-bottom: 15px;
+    font-size: 16px;
+    width: 25em;
+}
+
+textarea{
+    margin-bottom: 10px;
+    width: 400px;
+    resize: none;
+}
+
+input[type=submit]{
+    width: 10em;
+    margin: 10px 0;
+}
+
+input[type=date]{
+    width: 10em;
+}
+
+footer{
+    background-color: $baseColor;  
+    margin: 0;
+    padding: 20px 50px;
+    display: flex;
+    align-items: flex-end;
+    
+    h2{
+        margin: 0;
+        font-size: 1.5em;
+    }
+}
