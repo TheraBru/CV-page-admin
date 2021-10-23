@@ -1,20 +1,16 @@
-"use strict";
+// Code for buttons on page
 
-if (sessionStorage.getItem('inloggad') == userName)
-        {
-            // execute code 1
-        }
-        else
-        {
-            location.replace("login.html");
-        }
-
+// Code for closing the popup-window for updating
 let closeButtons = document.getElementsByClassName("closeBtn");
 for(let i = 0; i < closeButtons.length; i++){
     closeButtons[i].addEventListener("click", () => closeWindow());
 }
 
+// Code for log out button
+let logoutButton = document.getElementById("logoutBtn");
+logoutButton.addEventListener("click", () => logout());
 
+// Function that controls the folding button
 function buttonFolder(){
     let foldingButtons = document.getElementsByClassName("foldingBtn");
 
@@ -52,6 +48,7 @@ function buttonFolder(){
     }
 }
 
+// Function that closes the popup window for update
 function closeWindow(){
     if (document.getElementById("updateCourseContainer").style.display == "block"){
 
@@ -69,4 +66,11 @@ function closeWindow(){
 
         document.getElementById("updateWebsiteContainer").style.display = "none"
     }
+}
+
+// Function to log out
+function logout(){
+    sessionStorage.setItem("inloggad", "");
+    location.replace("login.html");
+    
 }

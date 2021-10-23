@@ -1,4 +1,5 @@
-
+// Code controlling the school and course information
+// declaring global variables the input from form
 let schoolContainer = document.getElementById("schoolContainer");
 let schoolName = document.getElementById("schoolName"); 
 let programname = document.getElementById("programname"); 
@@ -6,12 +7,15 @@ let degree = document.getElementById("degree");
 let schoolStartdate = document.getElementById("schoolStartdate"); 
 let schoolEnddate = document.getElementById("schoolEnddate"); 
 
+// Function writing out school information
 function writeSchool(){
     fetch(restURLSchool)
     .then((res)=> res.json())
     .then((data)=>{
         for(let i = 0; i < data.length; i++){
             let school = data[i];
+
+            // Rewriting date into year/month format
             let startdate= school.startdate.substring(0, 7).split('-')
             let enddate= school.enddate.substring(0, 7).split('-')
             startdate = startdate[0] + '/' + startdate[1];
@@ -19,6 +23,7 @@ function writeSchool(){
             if (enddate.substring(0,1)== "0"){
                 enddate = ""
             }
+            // Writing out the information
             schoolContainer.innerHTML = schoolContainer.innerHTML + 
             `<li>
                 <div class="flexContainer"> 
@@ -68,6 +73,8 @@ function writeSchool(){
 
 writeSchool();
 
+// Eventlisteners for school
+// Eventlistener for deleting school
 function deleteSchoolEventListener(schoolArray){
     for(let i = 0; i < schoolArray.length; i++){
         let school = schoolArray[i];
@@ -75,6 +82,7 @@ function deleteSchoolEventListener(schoolArray){
     }
 }
 
+// Eventlistener for updating school
 function updateSchoolEventListener(schoolArray){
     for(let i = 0; i < schoolArray.length; i++){
         let school = schoolArray[i];
@@ -82,6 +90,27 @@ function updateSchoolEventListener(schoolArray){
     }
 }
 
+// Add eventlistener to the submit button
+document.getElementById("schoolForm").addEventListener("submit", formHandlerSchool);
+
+// Eventlisteners for courses
+// Eventlistener for updating course
+function updateCourseEventListener(courseArray){
+    for(let i = 0; i < courseArray.length; i++){
+        let course = courseArray[i];
+        document.getElementById("updateCourse" + course.id).addEventListener("click", () => updateCourse(course.id));
+    }
+}
+
+// Eventlistener for deleting course
+function deleteCourseEventListener(courseArray){
+    for(let i = 0; i < courseArray.length; i++){
+        let course = courseArray[i];
+        document.getElementById("deleteCourse" + course.id).addEventListener("click", () => deleteCourse(course.id));
+    }
+}
+
+// Eventlistener for creating course
 function createCourseEventListener(schoolArray){
     for(let i = 0; i < schoolArray.length; i++){
         let school = schoolArray[i];
@@ -93,6 +122,7 @@ function createCourseEventListener(schoolArray){
     writeCourses();
 }
 
+// Function to write courses
 function writeCourses(){
     fetch(restURLCourses)
     .then((res)=>res.json())
@@ -121,8 +151,7 @@ function writeCourses(){
 }
 
 
-// Add eventlistener to the submit button
-document.getElementById("schoolForm").addEventListener("submit", formHandlerSchool);
+
 
 // Function that calls the api and posts the written information.
 function formHandlerSchool(){
@@ -133,20 +162,6 @@ function formHandlerSchool(){
         method: 'POST',
         body: JSON.stringify(newSchool)
     })
-}
-
-function updateCourseEventListener(courseArray){
-    for(let i = 0; i < courseArray.length; i++){
-        let course = courseArray[i];
-        document.getElementById("updateCourse" + course.id).addEventListener("click", () => updateCourse(course.id));
-    }
-}
-
-function deleteCourseEventListener(courseArray){
-    for(let i = 0; i < courseArray.length; i++){
-        let course = courseArray[i];
-        document.getElementById("deleteCourse" + course.id).addEventListener("click", () => deleteCourse(course.id));
-    }
 }
 
 // Function that calls the api and posts the written information.
@@ -160,6 +175,7 @@ function formHandlerCourse(courseName, courseStartDate, courseEndDate, schoolID)
     })
 }
 
+// function to delete school
 function deleteSchool(id){
     fetch(restURLSchool + "&id=" + id,{
         method: 'DELETE'
@@ -169,6 +185,7 @@ function deleteSchool(id){
     })
 }
 
+// function to delete course
 function deleteCourse(id){
     fetch(restURLCourses + "&id=" + id,{
         method: 'DELETE'
@@ -178,8 +195,10 @@ function deleteCourse(id){
     })
 }
 
+// Functions to update school
 function updateSchool(id){
 
+    // Declaring variables to update school form inputs
     let updateForm = document.getElementById("updateSchoolContainer");
     let schoolNameInForm = document.getElementById("updateSchoolName"); 
     let programnameInForm = document.getElementById("updateProgramname"); 
@@ -187,6 +206,7 @@ function updateSchool(id){
     let schoolStartdateInForm = document.getElementById("updateSchoolStartdate"); 
     let schoolEnddateInForm = document.getElementById("updateSchoolEnddate"); 
 
+    // Fetching information of school with that id and puts it into the form inputs
     fetch(restURLSchool + "&id=" + id)
     .then((res)=> res.json())
     .then((data)=>{
@@ -203,8 +223,10 @@ function updateSchool(id){
 })
 }
 
+// Function to put school information into REST
 function updateSchoolPut(id){
 
+    // Declaring variables as form inputted information
     let updatedSchoolName = document.getElementById("updateSchoolName").value; 
     let updatedProgramName = document.getElementById("updateProgramname").value; 
     let updatedDegree = document.getElementById("updateDegree").value; 
@@ -213,19 +235,23 @@ function updateSchoolPut(id){
 
     let updatedSchool = {"schoolname": updatedSchoolName, "programname": updatedProgramName, "degree": updatedDegree, "startdate": updatedStartDate, "enddate": updatedEndDate}
     
+    // Put information into REST
     fetch(restURLSchool + "&id=" + id,{
         method: 'PUT',
         body: JSON.stringify(updatedSchool)
     })
 }
 
+// Functions to update courses
 function updateCourse(id){
 
+    // Declaring variables as form input
     let updateForm = document.getElementById("updateCourseContainer");
     let courseNameInForm = document.getElementById("updateCourseName"); 
     let courseStartdateInForm = document.getElementById("updateCourseStartdate"); 
     let courseEnddateInForm = document.getElementById("updateCourseEnddate"); 
 
+    // Fetching API information for course with that id and puts that info into the input
     fetch(restURLCourses + "&id=" + id)
     .then((res)=> res.json())
     .then((data)=>{
@@ -238,14 +264,17 @@ function updateCourse(id){
     })
 }
 
+// Function to put info to REST
 function updateCoursePut(id, schoolid){
 
+    // Declaring variables as inputted input values from update form
     let updatedCourseName = document.getElementById("updateCourseName").value; 
     let updatedStartDate = document.getElementById("updateCourseStartdate").value; 
     let updatedEndDate = document.getElementById("updateCourseEnddate").value; 
 
     let updatedCourse = {"name": updatedCourseName, "startdate": updatedStartDate, "enddate": updatedEndDate, "schoolid": schoolid}
     
+    // Put new information into REST
     fetch(restURLCourses + "&id=" + id,{
         method: 'PUT',
         body: JSON.stringify(updatedCourse)

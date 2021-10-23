@@ -1,5 +1,8 @@
+// Code for media queries
+// Code for screens with a max width of 1000 pixels
 @media  screen and (max-width: 1000px) {
 
+    // Code for bigger elements
     #wrapper{
     width: 90vw;
     flex-direction: row;
@@ -24,16 +27,18 @@
         width: 60vw;
     }
     
+    article{
+        width: 60vw;
+    }
+    
+    // Code for portfolio
     #portfolioContainer{
         p{
             width: 60vw;
         }
     }
-    
-    article{
-        width: 60vw;
-    }
-    
+
+    // Code for school and courses
     .foldingBtn{
         width: 50vw;
     }
@@ -52,7 +57,12 @@
         }
     }
     
+    // Code for job
+    .infoContainer{
+        width: 60vw;
+    }
 
+    // Code for update popup
     #updateJobContainer, #updateCourseContainer, #updateSchoolContainer, #updateWebsiteContainer{
         top: 15vh;
         left: 8vw;
@@ -68,18 +78,12 @@
         top: 160px;
         left: 62vw;
     }
-
-    .infoContainer{
-        width: 60vw;
-    }
 }
 
+// Code for screens under 800 pixels
 @media  screen and (max-width: 800px) {
 
-    a{
-        word-wrap:break-word;
-    }
-
+    // Code for bigger elements
     aside{
         position: static;
         width: 94vw;
@@ -108,41 +112,10 @@
         }
     }
 
-    h1, h2, h3{
-        text-align: center;
-    }
-
-    .foldingBtn{
-        flex-direction: column;
-    }
-
-    .foldingText{
-        width: 90vw;
-    }
-
     footer{
         flex-direction: column;
         width: 94vw;
         padding: 0;
-        align-items: center;
-    }
-
-    #logga{
-        width: 80px;
-        height: 80px;
-        position: static;
-        top: 7px;
-        left: 10px;
-    }
-
-    input, textarea{
-        width: 80vw;
-    }
-    
-    #portfolio{
-        padding-top: 0;
-        display: flex;
-        flex-direction: column;
         align-items: center;
     }
 
@@ -160,6 +133,24 @@
         box-sizing: border-box;
     }
 
+    // Code for text
+
+    a{
+        word-wrap:break-word;
+    }
+
+    h1, h2, h3{
+        text-align: center;
+    }
+
+    // Code for portfolio
+    #portfolio{
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     #portfolioContainer p {
         width: 90vw;
     }
@@ -171,19 +162,15 @@
         }
     }
 
-    fieldset{
-        width: 85vw;
-        padding: 5px;
-    }
-
-    .flexContainer {
+    // Code for course and school
+    .foldingBtn{
         flex-direction: column;
-        align-items: center;
-    }
-
-    .foldingBtn {
         width: 90vw;
         align-items: flex-start;
+    }
+
+    .foldingText{
+        width: 90vw;
     }
 
     .courseForm form {
@@ -195,10 +182,12 @@
         }
     }
 
+    // Code for job
     .infoContainer {
         width: 80vw;
     }
 
+    // Code for updating popup
     #updateJobContainer, #updateCourseContainer, #updateSchoolContainer, #updateWebsiteContainer {
         top: 0;
         left: 0;
@@ -229,8 +218,33 @@
         left: 80vw;
     }
 
+
+    // Code for forms
+    input, textarea{
+        width: 80vw;
+    }
+    
+    fieldset{
+        width: 85vw;
+        padding: 5px;
+    }
+
     .btnDiv{
         flex-direction: row;
+    }
+
+    // Id and class information
+
+    #logga{
+        width: 80px;
+        height: 80px;
+        position: static;
+        top: 7px;
+        left: 10px;
+    }
+    .flexContainer {
+        flex-direction: column;
+        align-items: center;
     }
 
 }

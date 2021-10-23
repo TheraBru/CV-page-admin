@@ -1,3 +1,5 @@
+//  Code for visual layout of the page
+// Code for big elements
 header{
     padding: 5px;
     background-color: $baseColor;
@@ -19,6 +21,21 @@ article{
     border-bottom: solid $headingColor 1px;
 }
 
+footer{
+    background-color: $baseColor;  
+    margin: 0;
+    padding: 20px 50px;
+    display: flex;
+    align-items: flex-end;
+    
+    h2{
+        margin: 0;
+        font-size: 1.5em;
+    }
+}
+
+
+// Code for list
 ul{
     list-style: none;
     margin-bottom: 50px;
@@ -40,6 +57,7 @@ ul{
     }
 }
 
+// Code for nav-bars
 aside{
     position: fixed;
     left: 80vw;
@@ -65,6 +83,7 @@ nav{
     }
 }
 
+// Code for form
 fieldset{
     width: fit-content;
     padding-bottom: 10px;
@@ -102,17 +121,4 @@ input[type=submit]{
 
 input[type=date]{
     width: 10em;
-}
-
-footer{
-    background-color: $baseColor;  
-    margin: 0;
-    padding: 20px 50px;
-    display: flex;
-    align-items: flex-end;
-    
-    h2{
-        margin: 0;
-        font-size: 1.5em;
-    }
 }

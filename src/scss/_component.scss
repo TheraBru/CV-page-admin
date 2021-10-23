@@ -1,33 +1,4 @@
-#portfolio{
-    padding-top: 120px;
-}
-
-#updateJobContainer, #updateCourseContainer, #updateSchoolContainer, #updateWebsiteContainer{
-    position: fixed;
-    top: 15vh;
-    left: 25vw;
-    display: none;
-    background-color: $baseColor;
-    padding: 2vh 10vw 10vh 5vw;
-    width: 550px;
-    box-shadow: 10px 10px 4px rgb(90, 72, 81);
-
-    fieldset{
-        margin: 0 auto;
-        padding: 10px 50px;
-    }
-}
-
-.courseForm{
-    width: 20vw;
-}
-
-
-
-.labelMsg{
-    color: #a19699;
-    font-weight: 400;
-}
+// Code for components on pages
 #logga{
     width: 80px;
     height: 80px;
@@ -44,51 +15,32 @@
     margin: 0 auto;
 }
 
+// Code for portfolio part
+#portfolio{
+    padding-top: 120px;
+}
+
 #portfolioContainer{
     p{
         width: 35vw;
     }
 }
 
-
-#copyText{
-    text-align: center;
-    width: 70vw;
-    color: #6e696b;
-    font-size: 0.9em;
+// Code for school
+.courseClass{
+    border-bottom: solid $headingColor 1px; 
+    padding-bottom: 20px;
 }
 
-.foldingText {
-    display: none;
-    font-size: 16px;
-    background-color: $baseColor;
-    width: 40vw;
-    padding: 10px 20px;
-    box-sizing: border-box;
-}
+#schoolContainer, #jobContainer{
+    margin-top: 0px;
 
-.mypageArrow{
-    font-size: 3em;
-    color: $headingColor;
-    padding-bottom: 10px;
-}
-
-.foldingBtn{
-    width: 40vw;
-    text-align: left;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    border: none;
-    background-color: $baseColor;
-    padding: 10px 20px;
-    margin-right: 10px;
-    p{
-        font-size: 18px;
-        font-weight: 500;
+    li{
+        margin-bottom: 50px;
     }
 }
 
+// Code for job parts
 .infoContainer{
     background-color: $baseColor;
     padding: 10px 20px;
@@ -97,14 +49,66 @@
     text-align: left;
 }
 
-.courseClass{
-    border-bottom: solid $headingColor 1px; 
-    padding-bottom: 20px;
-}
-
 .flexContainer{
     display: flex;
 }
+
+#jobExp{
+    border-bottom: 0;
+}
+
+// Code for login
+#loginWrapper{
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 250px;
+}
+
+#errorMsg{
+    color: red;
+    display: none;
+}
+
+// Code for updating popup
+#updateJobContainer, #updateCourseContainer, #updateSchoolContainer, #updateWebsiteContainer{
+    position: fixed;
+    top: 15vh;
+    left: 25vw;
+    display: none;
+    background-color: $baseColor;
+    padding: 2vh 10vw 10vh 5vw;
+    width: 550px;
+    box-shadow: 10px 10px 4px rgb(90, 72, 81);
+
+    fieldset{
+        margin: 0 auto;
+        padding: 10px 50px;
+    }
+}
+
+// Code for forms
+.courseForm{
+    width: 20vw;
+}
+
+.courseForm{
+    form{
+        width: 34vw;
+
+        input[type=text]{
+            width: 21em;
+        }
+    }
+}
+
+.labelMsg{
+    color: #a19699;
+    font-weight: 400;
+}
+
+// Code for buttons
 .btnDiv{
     display: flex;
     flex-direction: column;
@@ -162,14 +166,6 @@
     }
 }
 
-#schoolContainer, #jobContainer{
-    margin-top: 0px;
-
-    li{
-        margin-bottom: 50px;
-    }
-}
-
 .closeBtn{
     font-size: 2em;
     color: $headingColor;
@@ -179,29 +175,44 @@
     cursor: pointer;
 }
 
-#jobExp{
-    border-bottom: 0;
+// Code for folding button
+.foldingText {
+    display: none;
+    font-size: 16px;
+    background-color: $baseColor;
+    width: 40vw;
+    padding: 10px 20px;
+    box-sizing: border-box;
 }
 
-.courseForm{
-    form{
-        width: 34vw;
+.mypageArrow{
+    font-size: 3em;
+    color: $headingColor;
+    padding-bottom: 10px;
+}
 
-        input[type=text]{
-            width: 21em;
-        }
+.foldingBtn{
+    width: 40vw;
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border: none;
+    background-color: $baseColor;
+    padding: 10px 20px;
+    margin-right: 10px;
+    p{
+        font-size: 18px;
+        font-weight: 500;
     }
 }
 
-#loginWrapper{
-    padding-top: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 250px;
+
+// Code for footer
+#copyText{
+    text-align: center;
+    width: 70vw;
+    color: #6e696b;
+    font-size: 0.9em;
 }
 
-#errorMsg{
-    color: red;
-    display: none;
-}
