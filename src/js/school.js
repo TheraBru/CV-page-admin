@@ -44,12 +44,12 @@ function writeSchool(){
                             </div>
                             <h5>Lägg till ny kurs till ${school.programname}</h5>
                             <fieldset class="courseForm">
-                                <form action="" id="courseForm${school.id}">
-                                    <label for="courseName">Kursnamn:</label>
+                                <form action="#" id="courseForm${school.id}">
+                                    <label for="courseName${i}">Kursnamn:</label>
                                     <input type="text" name="courseName" id="courseName${i}" required>
-                                    <label for="courseStartdate">Startdatum:</label>
+                                    <label for="courseStartdate${i}">Startdatum:</label>
                                     <input type="date" name="courseStartdate" id="courseStartdate${i}" required>
-                                    <label for="schoolEnddate">Slutdatum:</label>
+                                    <label for="courseEnddate${i}">Slutdatum:</label>
                                     <input type="date" name="schoolEnddate" id="courseEnddate${i}">
                                     <input type="submit" value="Lägg till" class="button editBtn">
                                 </form>

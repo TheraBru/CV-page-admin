@@ -86,6 +86,7 @@ function updateWebsite(id){
         websiteTitleInForm.value = thisWebsite.title;
         websiteDescInForm.value = thisWebsite.description;
         websiteURLInForm.value = thisWebsite.url;
+
         document.getElementById("updateWebsiteForm").addEventListener("click", () => updateWebsitePut(id));
     })
 }
@@ -97,9 +98,9 @@ function updateWebsitePut(id){
     let updatedWebsiteTitle = document.getElementById("updateWebsiteTitle").value; 
     let websiteDescInForm = document.getElementById("updateWebsiteDesc").value; 
     let websiteURLInForm = document.getElementById("updateWebsiteURL").value; 
-
+       
     let updatedWebsite = {"title": updatedWebsiteTitle, "description": websiteDescInForm, "url": websiteURLInForm}
-    
+        
     // Put info into the REST
     fetch(restURLWebsites + "&id=" + id,{
         method: 'PUT',
