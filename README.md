@@ -10,7 +10,7 @@ Med i det uppladdade materialet finns inte en config-fil som behövs för projek
 I config-filen ska det även finnas två konstanter för userName och password som ska användas för att skapa inloggningsväggen.
 
 För att presentera innehållet behövs en webbsida göras liknande detta repot:
-https://github.com/TheraBru/webb3-project-admin
+https://github.com/TheraBru/webb3-project-site
 
 ### Verktyg och paket använda
 * Gulp
